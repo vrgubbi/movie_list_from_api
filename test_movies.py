@@ -1,25 +1,23 @@
+import unittest
 from movies import home
 import requests
 
 
-def test_films_api_status():
-    movies = requests.get('https://ghibliapi465.'
-                          'herokuapp.com/films')
-    assert movies.status_code == 200
+class Test(unittest.TestCase):
+    """
+    The class that inherits unittest.TestCase
+    """
+
+    def test_films_api_status(self):
+        movies = requests.get('https://ghibliapi.'
+                              'herokuapp.com/films')
+        self.assertEqual(movies.status_code, 200)
+
+    def test_people_api_status(self):
+        movies = requests.get('https://ghibliapi.herokuapp.com/people')
+        self.assertEqual(movies.status_code, 200)
 
 
-def test_people_api_status():
-    movies = requests.get('https://ghibliapi68765.herokuapp.com/people')
-    assert movies.status_code == 200
-
-
-# def test_converter2():
-#     assert get_roman_numerals(1776) == 'MDCCLXXVI', "Should be MDCCLXXVI"
-
-
-if __name__ == "__main__":
-    test_films_api_status()
-    test_people_api_status()
-    # test_converter2()
-    # test_converter3()
-    print("Everything passed")
+if __name__ == '__main__':
+    # begin the unittest.main()
+    unittest.main()
