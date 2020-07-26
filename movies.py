@@ -8,6 +8,11 @@ app.config["DEBUG"] = True
 
 @app.route('/movies', methods=['GET'])
 def home():
+    '''
+    requests ghibliapi to fetch movies and peoples to establish relationship.
+    renders the avove data to movies.html template
+    as per the decorator, this page will load in url /movies
+    '''
     movies = requests.get('https://ghibliapi.herokuapp.com/films')
     movies = movies.json()
     movies_list = [(i['title'], i['url']) for i in movies]
@@ -23,4 +28,5 @@ def home():
 
 
 if __name__ == '__main__':
+    # runs in 8000 port
     app.run(host='0.0.0.0', port=8000)

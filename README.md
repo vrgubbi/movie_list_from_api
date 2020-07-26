@@ -80,8 +80,8 @@ Improvements:
 Finally:
 This web appication has been designed to take less time to load.
 
-Instead of making people api endpoint request for each and every movie, only one people api request has been made that has characters list of all the movies, also total counts of both the films and people endpoints api has less than 100. Also it'll avoid making multiple requests for the third party api.
+Instead of making people api endpoint request for each and every movie, only one people api request has been made that has characters list of all the movies, also total counts of both the films and people endpoints api has less than 100. Also it'll avoid making multiple requests for the third party api. If total count of output data exceeds to higher number, code logic can be altered for more scalability.
 
-How to setup this project has been explained in the above section, it'll then be accessed using url, localhost:8000/movies/
+About how to setup this project has been explained in the above section, it'll then be accessed using url, localhost:8000/movies/ and port 8000 as been specified in movies.py file.
 
 For look and feel of the webpage, screenshot has been attached in the name 'webpage_screenshot.png'.
